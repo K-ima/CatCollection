@@ -24,27 +24,35 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VVN-nr-zEV">
-                                            <rect key="frame" x="20" y="0.0" width="353" height="114.66666666666667"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Разрешение фото" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3e-R0-kY3">
-                                            <rect key="frame" x="16" y="119.66666666666667" width="361" height="20.333333333333329"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2IZ-c0-AMh">
+                                            <rect key="frame" x="20" y="10" width="353" height="120"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VVN-nr-zEV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="95.666666666666671"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Разрешение фото" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3e-R0-kY3">
+                                                    <rect key="frame" x="0.0" y="100.66666666666667" width="353" height="19.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="5YA-GX-pZv">
+                                            <rect key="frame" x="186.66666666666666" y="65" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="q3e-R0-kY3" firstAttribute="leading" secondItem="ymZ-3L-kyf" secondAttribute="leading" constant="16" id="37k-ww-vaj"/>
-                                        <constraint firstAttribute="trailing" secondItem="q3e-R0-kY3" secondAttribute="trailing" constant="16" id="C4D-59-CJ8"/>
-                                        <constraint firstAttribute="bottom" secondItem="q3e-R0-kY3" secondAttribute="bottom" constant="10" id="OQ8-7y-IEw"/>
-                                        <constraint firstItem="VVN-nr-zEV" firstAttribute="top" secondItem="ymZ-3L-kyf" secondAttribute="top" id="epg-hv-D52"/>
-                                        <constraint firstAttribute="trailing" secondItem="VVN-nr-zEV" secondAttribute="trailing" constant="20" id="qCe-7z-ODt"/>
-                                        <constraint firstItem="q3e-R0-kY3" firstAttribute="top" secondItem="VVN-nr-zEV" secondAttribute="bottom" constant="5" id="t7t-SP-zrC"/>
-                                        <constraint firstItem="VVN-nr-zEV" firstAttribute="leading" secondItem="ymZ-3L-kyf" secondAttribute="leading" constant="20" id="uyY-o1-wER"/>
+                                        <constraint firstAttribute="bottom" secondItem="2IZ-c0-AMh" secondAttribute="bottom" constant="20" id="EKM-di-Xgg"/>
+                                        <constraint firstAttribute="trailing" secondItem="2IZ-c0-AMh" secondAttribute="trailing" constant="20" id="nJ5-Ua-uDD"/>
+                                        <constraint firstItem="2IZ-c0-AMh" firstAttribute="top" secondItem="ymZ-3L-kyf" secondAttribute="top" constant="10" id="s2v-RJ-qI4"/>
+                                        <constraint firstItem="2IZ-c0-AMh" firstAttribute="leading" secondItem="ymZ-3L-kyf" secondAttribute="leading" constant="20" id="udh-m5-m3q"/>
+                                        <constraint firstItem="5YA-GX-pZv" firstAttribute="centerY" secondItem="ymZ-3L-kyf" secondAttribute="centerY" id="vUX-W7-LP6"/>
+                                        <constraint firstItem="5YA-GX-pZv" firstAttribute="centerX" secondItem="ymZ-3L-kyf" secondAttribute="centerX" id="xKz-Ja-Zkx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="5YA-GX-pZv" id="n5C-5e-hlI"/>
                                     <outlet property="catImage" destination="VVN-nr-zEV" id="feL-XK-0HZ"/>
                                     <outlet property="sizeImageLabel" destination="q3e-R0-kY3" id="g34-9d-Xcg"/>
                                 </connections>
@@ -59,7 +67,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DDy-Iq-l28" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866" y="85"/>
+            <point key="canvasLocation" x="864.8854961832061" y="84.507042253521135"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jm5-92-E7j">

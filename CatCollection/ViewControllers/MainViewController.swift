@@ -14,7 +14,7 @@ final class MainViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 300
+        tableView.rowHeight = 250
         fetchCat()
     }
 
@@ -42,7 +42,6 @@ extension MainViewController {
                 self?.tableView.reloadData()
             case .failure(let error):
                 print(error)
-                
             }
         }
     }
