@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  CatCollection
 //
 //  Created by Kima on 12.09.2023.
