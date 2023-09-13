@@ -8,7 +8,6 @@
 import UIKit
 
 final class MainViewController: UITableViewController {
-
     
     let url = URL(string: "https://api.thecatapi.com/v1/images/search?limit=10")!
     private var cats: [Cat] = []
@@ -30,14 +29,15 @@ final class MainViewController: UITableViewController {
         let cat = cats[indexPath.row]
         cell.configure(with: cat)
         return cell
-
     }
+}
 
+// MARK: - Networking
+extension MainViewController {
     private func fetchCat() {
         NetworkManager.shared.fetch([Cat].self, from: url) { [weak self] result in
             switch result {
             case .success(let cats):
-                print(cats)
                 self?.cats = cats
                 self?.tableView.reloadData()
             case .failure(let error):
@@ -47,6 +47,4 @@ final class MainViewController: UITableViewController {
         }
     }
 }
-
-
 
