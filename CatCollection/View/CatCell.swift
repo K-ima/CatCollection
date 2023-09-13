@@ -13,7 +13,8 @@ final class CatCell: UITableViewCell {
     @IBOutlet var sizeImageLabel: UILabel!
 
     func configure(with cat: Cat) {
-        sizeImageLabel.text = "Разрешение \(cat.width)х\(cat.height)"
+//        sizeImageLabel.text = "Разрешение \(cat.width)х\(cat.height)"
+        sizeImageLabel.text = String(cat.width)
         
         NetworkManager.shared.fetchImage(from: cat.url) { [weak self] result in
             switch result {
