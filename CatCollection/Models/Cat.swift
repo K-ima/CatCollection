@@ -14,8 +14,6 @@ struct Cat: Decodable {
     let height: Int
 }
 
-struct Cats: Decodable {
-    let cats: [Cat]
-}
+
 
 

@@ -7,9 +7,19 @@
 
 import UIKit
 
+enum Link {
+    case catsApiURL
+    
+    var url: URL {
+        switch self {
+        case .catsApiURL:
+            return URL(string: "https://api.thecatapi.com/v1/images/search?limit=10")!
+        }
+    }
+}
+
 final class MainViewController: UITableViewController {
     
-    let url = URL(string: "https://api.thecatapi.com/v1/images/search?limit=10")!
     private var cats: [Cat] = []
     
     override func viewDidLoad() {
@@ -35,7 +45,7 @@ final class MainViewController: UITableViewController {
 // MARK: - Networking
 extension MainViewController {
     private func fetchCat() {
-        NetworkManager.shared.fetch([Cat].self, from: url) { [weak self] result in
+        NetworkManager.shared.fetch([Cat].self, from: Link.catsApiURL.url) { [weak self] result in
             switch result {
             case .success(let cats):
                 self?.cats = cats
